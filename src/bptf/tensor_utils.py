@@ -8,7 +8,7 @@ import scipy.special as sp
 def is_binary(tensor):
     """Checks whether input is a binary integer tensor."""
     values = tensor if isinstance(tensor, np.ndarray) else tensor.data
-    return np.issubdtype(values.dtype, int) and all((values == 1) | (values == 0))
+    return np.issubdtype(values.dtype, int) and np.all((values == 1) | (values == 0))
 
 
 def is_sparse(tensor):
